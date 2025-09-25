@@ -7,5 +7,8 @@ public class RemoveDuplicatesFromAnArray {
         int[] uniqueArr = Arrays.stream(arr).distinct().toArray();
 
         System.out.println("Using Streams: " + Arrays.toString(uniqueArr));
+        System.out.println("Length of unique elements: " + uniqueArr.length);
     }
 }
+
+
