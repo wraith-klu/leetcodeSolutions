@@ -1,25 +1,31 @@
+import java.util.*;
+
 public class SearchinRotatedSortedArray {
 
     public static void main(String[] args) {
         int[] nums = { 4, 5, 6, 7, 0, 1, 2 };
-        int target = 0;
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter target value to search: ");
+        int target = sc.nextInt();
         int index = search(nums, target);
         System.out.println(index);
+
+        sc.close();
     }
 
     public static int search(int[] nums, int target) {
-        int indexOfMaxElement = searchMax(nums);
+        int pivot = searchMax(nums);
 
         // If array is not rotated
-        if (indexOfMaxElement == -1) {
+        if (pivot == -1) {
             return binarySearch(nums, 0, nums.length - 1, target);
         }
 
-        if (nums[0] <= target && target <= nums[indexOfMaxElement]) {
-            return binarySearch(nums, 0, indexOfMaxElement, target);
+        if (nums[0] <= target && target <= nums[pivot]) {
+            return binarySearch(nums, 0, pivot, target);
         } else {
-            return binarySearch(nums, indexOfMaxElement + 1, nums.length - 1, target);
+            return binarySearch(nums, pivot + 1, nums.length - 1, target);
         }
     }
 
