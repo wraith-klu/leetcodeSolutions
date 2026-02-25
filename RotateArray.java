@@ -9,11 +9,11 @@ public class RotateArray {
     }
     public static void rotate(int[] nums, int k) {
         int n = nums.length;
-        k = k % n; // handle k > n
+        k = k % n;                                   // handle k > n
 
-        reverse(nums, 0, n - 1);      // step 1 --> Rotate whole Array
-        reverse(nums, 0, k - 1);     // step 2 --> Reverse entire array
-        reverse(nums, k, n - 1);           // step 3 --> Reverse remaining elements(k to n)
+        reverse(nums, 0, n - 1);                    // step 1 --> Rotate whole Array
+        reverse(nums, 0, k - 1);                   // step 2 --> Reverse entire array
+        reverse(nums, k, n - 1);                  // step 3 --> Reverse remaining elements(k to n)
     }
 
     private static void reverse(int[] nums, int start, int end) {
