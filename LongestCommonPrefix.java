@@ -8,6 +8,17 @@ public class LongestCommonPrefix {
         System.out.println("Longest common prefix: " + result);
     }
 
+    /*
+    Leetcode Problem : 14, Link: https://leetcode.com/problems/longest-common-prefix/
+    Logic:
+        > Initialize an empty string to store the common prefix.
+        > Iterate through the characters of the first string.
+        > For each character, check if it exists at the same position in all other strings.
+        > If it does, append it to the common prefix.
+        > If it doesn't, return the current common prefix.
+        > If we reach the end of the first string, return the common prefix.
+    */
+
     public static String longestPrefixCount(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
