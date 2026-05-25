@@ -8,6 +8,21 @@ public class ArrangingCoins {
         System.out.println("Number of complete rows: " + result);
     }
     // Binary Search Approach
+    /*
+    Leetcode Problem : 441, Link: https://leetcode.com/problems/arranging-coins/
+    Logic:
+        > Use binary search to find the maximum number of complete rows that can be formed with n coins.
+        > The number of coins needed to form k complete rows is given by the formula: k * (k + 1) / 2.
+        > Initialize two pointers, start and end, to represent the range of possible complete rows.
+        > Calculate the mid-point and the number of coins needed for mid complete rows.
+        > If the coins needed is equal to n, return mid as the result.
+        > If the coins needed is less than n, move the start pointer to mid + 1 to search for more complete rows.
+        > If the coins needed is greater than n, move the end pointer to mid - 1 to search for fewer complete rows.
+        > Continue this process until start exceeds end, at which point end will represent the maximum number of complete rows that can be formed with n coins.
+
+    Time complexity: O(log n) due to binary search.
+    Space complexity: O(1) as we are using only a constant amount of space for the pointers and variables.
+    */
     public static int arrangeCoins(int n) {
         long start = 0;
         long end = n;

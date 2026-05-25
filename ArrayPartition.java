@@ -7,6 +7,18 @@ public class ArrayPartition {
         int result = arrayPairSum(nums);
         System.out.println("Maximized sum of pairs: " + result);
     }
+    /*
+    Leetcode Problem : 561, Link: https://leetcode.com/problems/array-partition/
+    Question:-
+        Given an integer array nums of 2n integers, group these integers into n pairs (a1, b1), (a2, b2), ..., (an, bn) such that the sum of min(ai, bi) for all i is maximized. Return the maximized sum.
+    Logic:
+        > Sort the array in ascending order.
+        > Pair adjacent elements to maximize the sum of the minimum values of each pair.
+        > Sum the first element of each pair (which will be the smaller one in each pair).
+
+    Time complexity: O(n log n) due to sorting.
+    Space complexity: O(1) as we are using only a constant amount of space for the variables.
+     */
     public static int arrayPairSum(int[] nums) {
         java.util.Arrays.sort(nums);
         int sum = 0;
