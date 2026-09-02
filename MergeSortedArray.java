@@ -8,6 +8,19 @@ public class MergeSortedArray {
         merge(nums1, m, nums2, n);
         System.out.println("Merged array: " + java.util.Arrays.toString(nums1));
     }
+    
+    /*
+    LeetCode Problem : 88, Link: https://leetcode.com/problems/merge-sorted-array/
+    Logic:
+        > Create a new array merged of size m + n to hold the merged elements.
+        > Copy the first m elements from nums1 into the merged array.
+        > Copy the n elements from nums2 into the merged array starting from index m.
+        > Sort the merged array using Arrays.sort().
+        > Copy the sorted elements back into nums1.
+
+    Time Complexity: O((m+n) log(m+n)), where m is the number of elements in nums1 and n is the number of elements in nums2, because we are sorting the merged array.
+    Space Complexity: O(m+n), because we are using an additional array of size m+n to store the merged elements.
+    */
 
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
         int k = m + n;
